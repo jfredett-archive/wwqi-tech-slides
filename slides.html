@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=1024" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <title>WWQI Tech Assets | Vermonster</title>
+      
+      <meta name="description" content="A talk on the Technical Assets and Aspects of the Women's World of Qajar Iran project" />
+      <meta name="author" content="Joe Fredette, Andrew Ross, Brian Kaney" />
+
+      <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+      <link href="css/impress-demo.css" rel="stylesheet" />
+
+      <link rel="shortcut icon" href="favicon.png" />
+      <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  </head>
+
+  <body>
+    <div class="fallback-message">
+      <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+      <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+    </div>
+
+    <div id="impress">
+      <div id="wwqi-title" class="step" data-x="0" data-y="0">
+        <h1>WWQI Technical Assets</h1>
+      </div>
+
+      <div id="wwqi-sub" class="step" data-x="70" data-y="60">
+        <blockquote>
+          <p> Nonstandard Issue </p>
+        </blockquote>
+      </div>
+
+      <div id="outline" class="step" data-x="0000" data-y="1000" data-scale="0.5">
+        <ul>
+          <li>Old Site -- Modern Web App</li>
+          <li>New Approach -- Oldschool Web<i>site</i></li>
+          <li>Current Status</li>
+          <li>Future Plans</li>
+        </ul>
+      </div>
+
+      <div id="old-site" class="step" data-x="0" data-y="2000" data-scale="0.5">
+        Ruby On Rails
+        MySQL
+        AWS
+        -- Modern Web Architecture, Modern Approach
+
+        Performance was an issue
+        Lead to maintainability problems
+        Complexity of the task meant it wasn't easy to solve in the "standard" way
+
+        -- Needed a _new approach_
+      </div>
+
+      <div id="new-site" class="step" data-x="0000" data-y="3000" data-rotate="90"  data-scale="1">
+        When in doubt, solve a different problem
+        Polyglot, multi-app approach
+          - 3 apps
+          - Search, CMS, Static Generator
+          - Hosted on Heroku -- Cheaper, faster
+          - S3 to host the static pages, Cloudfront to cache them
+          - Harvard handles images for us
+          - Do (implied: pay) less, get more.
+
+
+        Old-school tactics -- Plain old HTML pages
+
+        -- Old approach with a modern twist -- AWS services like S3 and CloudFront for speed and simplicity
+
+        -- Meant we needed to solve more, smaller problems 
+
+        -- How to Build the Production Site?
+          -- S3, CloudFront, and Plain-old HTML
+        -- How to Search?
+          -- ElasticSearch for tunable, fast, language aware search
+        -- How to host?
+          -- Heroku for cheap, simple hosting and devops.
+            -- Devops means "Developer Operations" ie - a dev doing all the
+               traditional IT tasks
+        -- How to Improve?
+          -- Neo4j for <i>semantic</i> search
+      </div>
+
+      <div id="current-status" class="step" data-x="3750" data-y="2000" data-scale="1">
+        Site is live!
+
+        ElasticSearch is Awesome!
+          - ElasticSearch allows us to search _everything_ transcripts,
+            translations, any text we enter can be searched
+
+        Much easier to maintain
+
+        Easier to deploy (publication model)
+
+      </div>
+
+      <div id="future-plans" class="step" data-x="4000" data-y="4000" data-scale="1">
+        <!--#################### -->
+
+        Improve the CMS
+          - Lots of room to tweak and make things easier
+
+        Cloudfront Coming Soon(tm)
+          - Will make it _even faster_
+
+        <!--#################### -->
+
+        Better integration with Library system
+          - make the curator's lives easier
+          - make for rapid introduction of new content to the production site.
+          - every item needs to move lots of large images to harvard library
+            server  
+            - Plan: Sneakernet + Automatic import of Library Receipt
+            - Emphasizing the Simplest thing that could possibly work
+            - For even a large increase in problem size, constant solution size
+
+        <!--#################### -->
+
+        - genealogy
+          - what they thought they wanted
+        - genealogy++ 
+          - add lots of relationships between more than just people
+        - semantic graph
+          - complicated, full of information
+          
+
+        - importance
+          - Finding out which nodes are most influential (subject to
+            constraints)
+          - Examples: Big Cities, Important Political/Cultural Leaders, etc
+          - Constraint might limit importance relative to particular
+            people/places/things
+          - Example Question: "Most important Person Before 1850 with respect
+            to manuscripts, excluding connections through Tehran"
+            - Why exclude Tehran? 
+              Because it's a _very_ popular node, likely to cause false
+              importance
+
+        - nontrivial relationships
+          - builds on importance 
+          - find connections between people/places/items
+          - determine likelihood that they know each other / interacted with
+            each other
+          - Example: "How many times were these two people in the same small
+            town 50 miles south of Tehran"
+          - Example: "What is the distribution of path-lengths between two
+            people"
+            - Need to exclude highly connected nodes, to prevent skewing the
+              data
+          
+        - cliques
+          - a clique is a group of objects with high internal connections, but
+          low external connections
+          - example: Distant Different social networks -- Eg, My social network, I move to
+          Chicago, Start a new social net -- My old social network = one clique, my new
+          social network = another clique, I'm the connection.
+          - example: Montagues and Capulets
+          - example question: What were the discrete social worlds of Qajar
+            Iran?
+            - answer: No idea, Clique analysis is really hard.
+
+        - what else?
+          - cliques form a graph
+          - all the previous questions can be asked about cliques
+            - what are important discrete social worlds in Qajar Iran?
+            - How are two different social groups related?
+            - What are the super groups of smaller social groups?
+          - Proceed ad infinitum
+
+        - How can we make this happen
+          - More data = Better answers
+            - Make it easier to enter data
+          - Graph Database with good UI -- designed for non-programmers
+          - Inference Engines
+            - Ask all the questions, remember the answers.
+        
+        - Progress toward this goal:
+          - CMS 
+            - easier to enter data
+          - Neo4j
+            - Graph Database extracted from the curated data
+
+        - Future Goals
+          - Good UI to the Neo4j Database
+          - Inference Engines
+            - Infer nth-order edges (eg: This is someones second cousin)
+            - Cache Importance Metrics (eg: How important is this node?)
+            - Cache Relationship Metrics (eg: This nth order relationship
+            indicates a high probability that these two objects are related)
+            - Cache Clique analysis
+            - Caching is for speed
+
+      </div>
+
+      <div id="tertiary-benefits" class="step" data-x="4000" data-y="6000" data-scale="1" >
+        Things we've been able to give back to the FLOSS community:
+
+        - graphable
+          - A gem that drives extracting the semantic graph information from the
+            system modelling
+          - Works transparently on many systems using the same underlying
+            database mapping API
+        
+        - searchable
+          - Potential gem extracted from the code that builds the search index
+          - Provide a thin layer on top of the excellent Tire gem to make
+            rapidly building multi-lingual Search indexes easy
+          - Provide a thin layer to aid in building searches across multiple
+            languages
+
+        - enviable
+          - Tool for managing multiple configuration sources
+
+        - static page generator
+          - This too could be extracted an made generic. 
+          - Would provide a powerful way for other, similar projects to
+            systematically convert their site into a pre-cached set of html
+            pages for S3 and Cloudfront
+          - Needs the most effort to make work.
+
+        This doesn't even begin to cover the numerous bugs uncovered, solutions
+        found (and given back to the community), and the wealth of potential
+        tools that will be born out of the Neo4j integration. 
+
+        It's not only helping history and WWQI, but also the FLOSS community by
+        virtue of our use and contribution to FLOSS tools.
+      </div>
+    </div>
+  </body>
+
+  <script src="js/impress.js"></script>
+  <script>impress().init();</script>
+
+</html>
