@@ -28,207 +28,327 @@
         <h1>WWQI Technical Assets</h1>
       </div>
 
-      <div id="wwqi-sub" class="step" data-x="70" data-y="60">
-        <blockquote>
-          <p> Nonstandard Issue </p>
-        </blockquote>
+      <div id="wwqi-sub" class="step" data-x="60" data-y="60">
+        <p> Nonstandard Issue </p>
       </div>
 
-      <div id="outline" class="step" data-x="0000" data-y="1000" data-scale="0.5">
+      <!-- ################################################################################### -->
+
+      <!--
+        The old app was a standard-issue Ruby on Rails app, built on MySQL, The current version of
+        Rails at the time, and AWS
+      -->
+      <div id="old-site" class="step" data-x="0" data-y="2000" data-scale="1">
         <ul>
-          <li>Old Site -- Modern Web App</li>
-          <li>New Approach -- Oldschool Web<i>site</i></li>
-          <li>Current Status</li>
-          <li>Future Plans</li>
+          <li>Ruby On Rails</li>
+          <li>MySQL</li>
+          <li>AWS</li>
         </ul>
       </div>
 
-      <div id="old-site" class="step" data-x="0" data-y="2000" data-scale="0.5">
-        Ruby On Rails
-        MySQL
-        AWS
-        -- Modern Web Architecture, Modern Approach
+        <!-- 
+        It was also slow, because it was trying to not only manage content, but display it,
+        internationalize it, and general get everything to play nice together
+        -->
+        <div id="performance-problems" class="step" data-x="1500" data-y="2050" data-scale="0.75">
+          Performance was an issue
+        </div>
 
-        Performance was an issue
-        Lead to maintainability problems
-        Complexity of the task meant it wasn't easy to solve in the "standard" way
+        <!-- 
+        Because of all this, there were many concession made to make the app perform enough
+        to be usable. These concessions came in the form of technical debt, which lead to
+        maintainablility problems
+        -->
+        <div id="maintainability-problems" class="step" data-x="1500" data-y="2150" data-scale="0.75">
+          Lead to maintainability problems
+        </div>
 
-        -- Needed a _new approach_
+        <!-- 
+        We needed to rethink the architecture from the ground up
+        -->
+        <div id="rethink" class="step" data-x="1500" data-y="2250" data-scale="0.75">
+          Needed a new approach
+        </div>
+
+      <!-- ################################################################################### -->
+
+      <!--
+      Vermonster likes to learn from the past, we constantly aim to improve how we approach problems
+      by reviewing how past approaches have worked, what made them good, and what made them bad. To
+      that end, in this case, we relied on some age old computer wisdom.
+      -->
+      <div id="computer-wisdom-for-a-new-approach" class="step" data-y="3000" data-rotate="90"  data-scale="1">
+        Age old computer wisdom:
       </div>
 
-      <div id="new-site" class="step" data-x="0000" data-y="3000" data-rotate="90"  data-scale="1">
+
+      <!-- punt. -->
+      <div id="when-in-doubt-punt" class="step" data-x="-600" data-y="3000" data-rotate="90"  data-scale="1">
         When in doubt, solve a different problem
-        Polyglot, multi-app approach
-          - 3 apps
-          - Search, CMS, Static Generator
-          - Hosted on Heroku -- Cheaper, faster
-          - S3 to host the static pages, Cloudfront to cache them
-          - Harvard handles images for us
-          - Do (implied: pay) less, get more.
-
-
-        Old-school tactics -- Plain old HTML pages
-
-        -- Old approach with a modern twist -- AWS services like S3 and CloudFront for speed and simplicity
-
-        -- Meant we needed to solve more, smaller problems 
-
-        -- How to Build the Production Site?
-          -- S3, CloudFront, and Plain-old HTML
-        -- How to Search?
-          -- ElasticSearch for tunable, fast, language aware search
-        -- How to host?
-          -- Heroku for cheap, simple hosting and devops.
-            -- Devops means "Developer Operations" ie - a dev doing all the
-               traditional IT tasks
-        -- How to Improve?
-          -- Neo4j for <i>semantic</i> search
       </div>
 
-      <div id="current-status" class="step" data-x="3750" data-y="2000" data-scale="1">
-        Site is live!
+        <!-- 
+        Vermonster follows the Polyglot approach to software engineering, all that means is:
+        -->
+        <div id="polyglot" class="step" data-x="-1500" data-y="3000" data-rotate="90"  data-scale="1">
+          Vermonster is Polyglot
+        </div>
 
+        <!--
+        use the right tool for the job.
+        -->
+        <div id="polyglot-definition" class="step" data-x="-1600" data-y="3000" data-rotate="90"  data-scale="1">
+          "Right Tool for the Job"
+        </div>
+
+        <!-- 
+        So we decided to build three apps. 
+        -->
+
+        <!--
+        The Search site would manage interfacing to the
+        content to search it 
+        -->
+        <div id="search-site" class="step" data-x="-1200" data-y="1500" data-rotate="90"  data-scale="1">
+          Search site
+        </div>
+
+        <!--
+        The Content Management System would be responsible for providing the authoritative
+        representation of the curated content of the system
+        -->
+        <div id="cms" class="step" data-x="-1300" data-y="1500" data-rotate="90"  data-scale="1">
+          Content Management System
+        </div>
+
+        <!--
+        The Static Generator would be responsible for building the public-facing view of the site
+        -->
+        <div id="static-generator" class="step" data-x="-1400" data-y="1500" data-rotate="90"  data-scale="1">
+          Static Generator
+        </div>
+
+        <!-- 
+        Finally, we decided we'd let Harvard handle the hard problem of Managing the High Resolution
+        images for us
+        -->
+        <div id="harvard-pds" class="step" data-x="-1200" data-rotate="90" data-scale="1">
+          Harvard Library System
+        </div>
+
+      <!-- ################################################################################### -->
+
+
+      <div id="implementation-details-search" class="step" data-x="5000" data-y="3000" data-scale="1">
+        Search Site 
+      </div>
+
+      <div id="implementation-details-search-1" class="step" data-x="5500" data-y="3000" data-scale="0.5">
+        Sinatra + ElasticSearch on Heroku
+      </div>
+
+      <div id="implementation-details-cms" class="step" data-x="5000" data-y="3100" data-scale="1">
+        CMS
+      </div>
+
+      <div id="implementation-details-cms-1" class="step" data-x="5500" data-y="3100" data-scale="0.5">
+        Rails on Heroku
+      </div>
+
+      <div id="implementation-details-static" class="step" data-x="5000" data-y="3200" data-scale="1">
+        Static Pages
+      </div>
+        
+      <div id="implementation-details-static-1" class="step" data-x="5500" data-y="3200" data-scale="0.5">
+        S3 with CloudFront
+      </div>
+
+      <!-- ################################################################################### -->
+
+      <div id="its-alive" class="step" data-x="4750" data-y="-3000" data-rotate='270' data-z='-3000'>
+        Site is Live!
+      </div>
+
+        <div id="publication-model" class="step" data-x="4750" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
+          Publication Model 
+        </div>
+
+        <div id="maintainable" class="step" data-x="4800" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
+          Much easier to maintain
+        </div>
+
+        <div id="changable" class="step" data-x="4850" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
+          Easy to iterate on 
+        </div>
+
+          <div id="changable-code" class="step" data-x="4900" data-y="700" data-rotate='270' data-z='-3000' data-scale='0.25'>
+            Code
+          </div>
+
+          <div id="changable-design" class="step" data-x="4900" data-y="625" data-rotate='270' data-z='-3000' data-scale='0.25'>
+            Design
+          </div>
+
+          <div id="changable-content" class="step" data-x="4900" data-y="550" data-rotate='270' data-z='-3000' data-scale='0.25'>
+            Content
+          </div>
+
+
+      <div id="elasticsearch" class="step" data-x="4800" data-y="7500" data-rotate='270' data-z='-5000'> 
         ElasticSearch is Awesome!
-          - ElasticSearch allows us to search _everything_ transcripts,
-            translations, any text we enter can be searched
-
-        Much easier to maintain
-
-        Easier to deploy (publication model)
-
       </div>
 
-      <div id="future-plans" class="step" data-x="4000" data-y="4000" data-scale="1">
-        <!--#################### -->
+        <div id="fulltext" class="step" data-x="4850" data-y="7500" data-rotate='210' data-z='-10000'>
+          Fulltext Search
+        </div>
 
-        Improve the CMS
-          - Lots of room to tweak and make things easier
+        <div id="on-any-field" class="step" data-x="4900" data-y="7500" data-rotate='150' data-z='-15000'>
+          On Any Field
+        </div>
 
-        Cloudfront Coming Soon(tm)
-          - Will make it _even faster_
+        <div id="in-any-language" class="step" data-x="4950" data-y="7500" data-rotate='90' data-z='-20000'>
+          In Any Language
+        </div>
 
-        <!--#################### -->
+        <div id="fast" class="step" data-x="5000" data-y="7500" data-rotate='30' data-z='-25000'>
+          Fast
+        </div>
 
-        Better integration with Library system
-          - make the curator's lives easier
-          - make for rapid introduction of new content to the production site.
-          - every item needs to move lots of large images to harvard library
-            server  
-            - Plan: Sneakernet + Automatic import of Library Receipt
-            - Emphasizing the Simplest thing that could possibly work
-            - For even a large increase in problem size, constant solution size
 
-        <!--#################### -->
 
-        - genealogy
-          - what they thought they wanted
-        - genealogy++ 
-          - add lots of relationships between more than just people
-        - semantic graph
-          - complicated, full of information
+
+      <!-- ################################################################################### -->
+
+      <!--<div id="future-plans" class="step" data-x="400000" data-y="4000" data-scale="1">-->
+
+        <!--Improve the CMS-->
+          <!--- Lots of room to tweak and make things easier-->
+
+        <!--Cloudfront Coming Soon(tm)-->
+          <!--- Will make it _even faster_-->
+
+        <!--[>#################### <]-->
+
+        <!--Better integration with Library system-->
+          <!--- make the curator's lives easier-->
+          <!--- make for rapid introduction of new content to the production site.-->
+          <!--- every item needs to move lots of large images to harvard library-->
+            <!--server  -->
+            <!--- Plan: Sneakernet + Automatic import of Library Receipt-->
+            <!--- Emphasizing the Simplest thing that could possibly work-->
+            <!--- For even a large increase in problem size, constant solution size-->
+
+        <!--[>#################### <]-->
+
+        <!--- genealogy-->
+          <!--- what they thought they wanted-->
+        <!--- genealogy++ -->
+          <!--- add lots of relationships between more than just people-->
+        <!--- semantic graph-->
+          <!--- complicated, full of information-->
           
 
-        - importance
-          - Finding out which nodes are most influential (subject to
-            constraints)
-          - Examples: Big Cities, Important Political/Cultural Leaders, etc
-          - Constraint might limit importance relative to particular
-            people/places/things
-          - Example Question: "Most important Person Before 1850 with respect
-            to manuscripts, excluding connections through Tehran"
-            - Why exclude Tehran? 
-              Because it's a _very_ popular node, likely to cause false
-              importance
+        <!--- importance-->
+          <!--- Finding out which nodes are most influential (subject to-->
+            <!--constraints)-->
+          <!--- Examples: Big Cities, Important Political/Cultural Leaders, etc-->
+          <!--- Constraint might limit importance relative to particular-->
+            <!--people/places/things-->
+          <!--- Example Question: "Most important Person Before 1850 with respect-->
+            <!--to manuscripts, excluding connections through Tehran"-->
+            <!--- Why exclude Tehran? -->
+              <!--Because it's a _very_ popular node, likely to cause false-->
+              <!--importance-->
 
-        - nontrivial relationships
-          - builds on importance 
-          - find connections between people/places/items
-          - determine likelihood that they know each other / interacted with
-            each other
-          - Example: "How many times were these two people in the same small
-            town 50 miles south of Tehran"
-          - Example: "What is the distribution of path-lengths between two
-            people"
-            - Need to exclude highly connected nodes, to prevent skewing the
-              data
+        <!--- nontrivial relationships-->
+          <!--- builds on importance -->
+          <!--- find connections between people/places/items-->
+          <!--- determine likelihood that they know each other / interacted with-->
+            <!--each other-->
+          <!--- Example: "How many times were these two people in the same small-->
+            <!--town 50 miles south of Tehran"-->
+          <!--- Example: "What is the distribution of path-lengths between two-->
+            <!--people"-->
+            <!--- Need to exclude highly connected nodes, to prevent skewing the-->
+              <!--data-->
           
-        - cliques
-          - a clique is a group of objects with high internal connections, but
-          low external connections
-          - example: Distant Different social networks -- Eg, My social network, I move to
-          Chicago, Start a new social net -- My old social network = one clique, my new
-          social network = another clique, I'm the connection.
-          - example: Montagues and Capulets
-          - example question: What were the discrete social worlds of Qajar
-            Iran?
-            - answer: No idea, Clique analysis is really hard.
+        <!--- cliques-->
+          <!--- a clique is a group of objects with high internal connections, but-->
+          <!--low external connections-->
+          <!--- example: Distant Different social networks -- Eg, My social network, I move to-->
+          <!--Chicago, Start a new social net -- My old social network = one clique, my new-->
+          <!--social network = another clique, I'm the connection.-->
+          <!--- example: Montagues and Capulets-->
+          <!--- example question: What were the discrete social worlds of Qajar-->
+            <!--Iran?-->
+            <!--- answer: No idea, Clique analysis is really hard.-->
 
-        - what else?
-          - cliques form a graph
-          - all the previous questions can be asked about cliques
-            - what are important discrete social worlds in Qajar Iran?
-            - How are two different social groups related?
-            - What are the super groups of smaller social groups?
-          - Proceed ad infinitum
+        <!--- what else?-->
+          <!--- cliques form a graph-->
+          <!--- all the previous questions can be asked about cliques-->
+            <!--- what are important discrete social worlds in Qajar Iran?-->
+            <!--- How are two different social groups related?-->
+            <!--- What are the super groups of smaller social groups?-->
+          <!--- Proceed ad infinitum-->
 
-        - How can we make this happen
-          - More data = Better answers
-            - Make it easier to enter data
-          - Graph Database with good UI -- designed for non-programmers
-          - Inference Engines
-            - Ask all the questions, remember the answers.
+        <!--- How can we make this happen-->
+          <!--- More data = Better answers-->
+            <!--- Make it easier to enter data-->
+          <!--- Graph Database with good UI -- designed for non-programmers-->
+          <!--- Inference Engines-->
+            <!--- Ask all the questions, remember the answers.-->
         
-        - Progress toward this goal:
-          - CMS 
-            - easier to enter data
-          - Neo4j
-            - Graph Database extracted from the curated data
+        <!--- Progress toward this goal:-->
+          <!--- CMS -->
+            <!--- easier to enter data-->
+          <!--- Neo4j-->
+            <!--- Graph Database extracted from the curated data-->
 
-        - Future Goals
-          - Good UI to the Neo4j Database
-          - Inference Engines
-            - Infer nth-order edges (eg: This is someones second cousin)
-            - Cache Importance Metrics (eg: How important is this node?)
-            - Cache Relationship Metrics (eg: This nth order relationship
-            indicates a high probability that these two objects are related)
-            - Cache Clique analysis
-            - Caching is for speed
+        <!--- Future Goals-->
+          <!--- Good UI to the Neo4j Database-->
+          <!--- Inference Engines-->
+            <!--- Infer nth-order edges (eg: This is someones second cousin)-->
+            <!--- Cache Importance Metrics (eg: How important is this node?)-->
+            <!--- Cache Relationship Metrics (eg: This nth order relationship-->
+            <!--indicates a high probability that these two objects are related)-->
+            <!--- Cache Clique analysis-->
+            <!--- Caching is for speed-->
 
-      </div>
+      <!--</div>-->
 
-      <div id="tertiary-benefits" class="step" data-x="4000" data-y="6000" data-scale="1" >
-        Things we've been able to give back to the FLOSS community:
+      <!--<div id="tertiary-benefits" class="step" data-x="4000" data-y="6000" data-scale="1" >-->
+        <!--Things we've been able to give back to the FLOSS community:-->
 
-        - graphable
-          - A gem that drives extracting the semantic graph information from the
-            system modelling
-          - Works transparently on many systems using the same underlying
-            database mapping API
+        <!--- graphable-->
+          <!--- A gem that drives extracting the semantic graph information from the-->
+            <!--system modelling-->
+          <!--- Works transparently on many systems using the same underlying-->
+            <!--database mapping API-->
         
-        - searchable
-          - Potential gem extracted from the code that builds the search index
-          - Provide a thin layer on top of the excellent Tire gem to make
-            rapidly building multi-lingual Search indexes easy
-          - Provide a thin layer to aid in building searches across multiple
-            languages
+        <!--- searchable-->
+          <!--- Potential gem extracted from the code that builds the search index-->
+          <!--- Provide a thin layer on top of the excellent Tire gem to make-->
+            <!--rapidly building multi-lingual Search indexes easy-->
+          <!--- Provide a thin layer to aid in building searches across multiple-->
+            <!--languages-->
 
-        - enviable
-          - Tool for managing multiple configuration sources
+        <!--- enviable-->
+          <!--- Tool for managing multiple configuration sources-->
 
-        - static page generator
-          - This too could be extracted an made generic. 
-          - Would provide a powerful way for other, similar projects to
-            systematically convert their site into a pre-cached set of html
-            pages for S3 and Cloudfront
-          - Needs the most effort to make work.
+        <!--- static page generator-->
+          <!--- This too could be extracted an made generic. -->
+          <!--- Would provide a powerful way for other, similar projects to-->
+            <!--systematically convert their site into a pre-cached set of html-->
+            <!--pages for S3 and Cloudfront-->
+          <!--- Needs the most effort to make work.-->
 
-        This doesn't even begin to cover the numerous bugs uncovered, solutions
-        found (and given back to the community), and the wealth of potential
-        tools that will be born out of the Neo4j integration. 
+        <!--This doesn't even begin to cover the numerous bugs uncovered, solutions-->
+        <!--found (and given back to the community), and the wealth of potential-->
+        <!--tools that will be born out of the Neo4j integration. -->
 
-        It's not only helping history and WWQI, but also the FLOSS community by
-        virtue of our use and contribution to FLOSS tools.
-      </div>
+        <!--It's not only helping history and WWQI, but also the FLOSS community by-->
+        <!--virtue of our use and contribution to FLOSS tools.-->
+      <!--</div>-->
     </div>
   </body>
 
