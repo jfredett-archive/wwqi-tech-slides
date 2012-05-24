@@ -28,17 +28,18 @@
         <h1>WWQI Technical Assets</h1>
       </div>
 
-      <div id="wwqi-sub" class="step" data-x="60" data-y="60">
-        <p> Nonstandard Issue </p>
-      </div>
-
       <!-- ################################################################################### -->
 
       <!--
         The old app was a standard-issue Ruby on Rails app, built on MySQL, The current version of
         Rails at the time, and AWS
       -->
-      <div id="old-site" class="step" data-x="0" data-y="2000" data-scale="1">
+
+      <div id="old-site-1" class="step hide-when-inactive" data-x="0" data-y="2000" data-scale="1">
+        Old Site
+      </div>
+
+      <div id="old-site-2" class="step hide-when-inactive" data-x="0" data-y="2000" data-scale="1">
         <ul>
           <li>Ruby On Rails</li>
           <li>MySQL</li>
@@ -46,12 +47,27 @@
         </ul>
       </div>
 
+
+      <div id="old-site-3" class="step hide-when-inactive" data-x="0" data-y="2000" data-scale="1">
+        Standard Issue 
+      </div>
+
+        <div id="elephant-in-the-room" class='step hide-until-active' data-x="2000" data-y='2000' data-scale='1'>
+          The Elephant in the Room
+        </div>
+
+        <div id='elephant-problems' class='step hide-until-active' data-x='2000' data-y='2150' data-scale='0.75'>
+          <img alt="n/a" src='images/elefunk.jpeg' />
+        </div>
+        
         <!-- 
         It was also slow, because it was trying to not only manage content, but display it,
         internationalize it, and general get everything to play nice together
         -->
-        <div id="performance-problems" class="step" data-x="1500" data-y="2050" data-scale="0.75">
-          Performance was an issue
+
+
+        <div id="performance-problems" class="step hide-until-active" data-x="1500" data-y="2050" data-scale="0.75">
+          Performance 
         </div>
 
         <!-- 
@@ -59,14 +75,14 @@
         to be usable. These concessions came in the form of technical debt, which lead to
         maintainablility problems
         -->
-        <div id="maintainability-problems" class="step" data-x="1500" data-y="2150" data-scale="0.75">
+        <div id="maintainability-problems" class="step hide-until-active" data-x="1500" data-y="2150" data-scale="0.75">
           Lead to maintainability problems
         </div>
 
         <!-- 
         We needed to rethink the architecture from the ground up
         -->
-        <div id="rethink" class="step" data-x="1500" data-y="2250" data-scale="0.75">
+        <div id="rethink" class="step hide-until-active" data-x="1500" data-y="2250" data-scale="0.75">
           Needed a new approach
         </div>
 
@@ -77,27 +93,20 @@
       by reviewing how past approaches have worked, what made them good, and what made them bad. To
       that end, in this case, we relied on some age old computer wisdom.
       -->
-      <div id="computer-wisdom-for-a-new-approach" class="step" data-y="3000" data-rotate="90"  data-scale="1">
+      <div id="computer-wisdom-for-a-new-approach" class="step hide-when-inactive" data-y="3000" data-rotate="90"  data-scale="1">
         Age old computer wisdom:
       </div>
 
 
       <!-- punt. -->
-      <div id="when-in-doubt-punt" class="step" data-x="-600" data-y="3000" data-rotate="90"  data-scale="1">
+      <div id="when-in-doubt-punt" class="step hide-when-inactive" data-y="3000" data-rotate="90"  data-scale="1">
         When in doubt, solve a different problem
       </div>
-
-        <!-- 
-        Vermonster follows the Polyglot approach to software engineering, all that means is:
-        -->
-        <div id="polyglot" class="step" data-x="-1500" data-y="3000" data-rotate="90"  data-scale="1">
-          Vermonster is Polyglot
-        </div>
 
         <!--
         use the right tool for the job.
         -->
-        <div id="polyglot-definition" class="step" data-x="-1600" data-y="3000" data-rotate="90"  data-scale="1">
+        <div id="polyglot-definition" class="step hide-when-inactive" data-x="-1600" data-y="3000" data-rotate="90"  data-scale="1">
           "Right Tool for the Job"
         </div>
 
@@ -109,7 +118,7 @@
         The Search site would manage interfacing to the
         content to search it 
         -->
-        <div id="search-site" class="step" data-x="-1200" data-y="1500" data-rotate="90"  data-scale="1">
+        <div id="search-site" class="step hide-when-inactive" data-x="-1200" data-y="1500" data-rotate="90"  data-scale="1">
           Search site
         </div>
 
@@ -117,14 +126,14 @@
         The Content Management System would be responsible for providing the authoritative
         representation of the curated content of the system
         -->
-        <div id="cms" class="step" data-x="-1300" data-y="1500" data-rotate="90"  data-scale="1">
+        <div id="cms" class="step hide-when-inactive" data-x="-1300" data-y="1500" data-rotate="90"  data-scale="1">
           Content Management System
         </div>
 
         <!--
         The Static Generator would be responsible for building the public-facing view of the site
         -->
-        <div id="static-generator" class="step" data-x="-1400" data-y="1500" data-rotate="90"  data-scale="1">
+        <div id="static-generator" class="step hide-when-inactive" data-x="-1400" data-y="1500" data-rotate="90"  data-scale="1">
           Static Generator
         </div>
 
@@ -139,29 +148,29 @@
       <!-- ################################################################################### -->
 
 
-      <div id="implementation-details-search" class="step" data-x="5000" data-y="3000" data-scale="1">
-        Search Site 
-      </div>
-
-      <div id="implementation-details-search-1" class="step" data-x="5500" data-y="3000" data-scale="0.5">
-        Sinatra + ElasticSearch on Heroku
-      </div>
-
-      <div id="implementation-details-cms" class="step" data-x="5000" data-y="3100" data-scale="1">
+      <div id="implementation-details-search" class="step " data-x="5000" data-y="3000" data-scale="1">
         CMS
       </div>
 
-      <div id="implementation-details-cms-1" class="step" data-x="5500" data-y="3100" data-scale="0.5">
-        Rails on Heroku
+        <div id="implementation-details-search-1" class="step hide-until-active" data-x="5500" data-y="3000" data-scale="1">
+          Rails on Heroku
+        </div>
+
+      <div id="implementation-details-cms" class="step" data-x="5000" data-y="3100" data-scale="1">
+        Search Site 
       </div>
+
+        <div id="implementation-details-cms-1" class="step hide-until-active" data-x="5500" data-y="3100" data-scale="1">
+          Sinatra + ElasticSearch on Heroku
+        </div>
 
       <div id="implementation-details-static" class="step" data-x="5000" data-y="3200" data-scale="1">
         Static Pages
       </div>
         
-      <div id="implementation-details-static-1" class="step" data-x="5500" data-y="3200" data-scale="0.5">
-        S3 with CloudFront
-      </div>
+        <div id="implementation-details-static-1" class="step hide-until-active" data-x="5500" data-y="3200" data-scale="1">
+          S3 with CloudFront
+        </div>
 
       <!-- ################################################################################### -->
 
@@ -169,186 +178,329 @@
         Site is Live!
       </div>
 
-        <div id="publication-model" class="step" data-x="4750" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
+        <div id="publication-model" class="step hide-until-active" data-x="4750" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
           Publication Model 
         </div>
 
-        <div id="maintainable" class="step" data-x="4800" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
+        <div id="maintainable" class="step hide-until-active" data-x="4800" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
           Much easier to maintain
         </div>
 
-        <div id="changable" class="step" data-x="4850" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
+        <div id="changable" class="step hide-until-active" data-x="4850" data-y="600" data-rotate='270' data-z='-3000' data-scale='0.5'>
           Easy to iterate on 
         </div>
 
-          <div id="changable-code" class="step" data-x="4900" data-y="700" data-rotate='270' data-z='-3000' data-scale='0.25'>
+          <div id="changable-code" class="step hide-until-active" data-x="4900" data-y="700" data-rotate='270' data-z='-3000' data-scale='0.25'>
             Code
           </div>
 
-          <div id="changable-design" class="step" data-x="4900" data-y="625" data-rotate='270' data-z='-3000' data-scale='0.25'>
+          <div id="changable-design" class="step hide-until-active" data-x="4900" data-y="625" data-rotate='270' data-z='-3000' data-scale='0.25'>
             Design
           </div>
 
-          <div id="changable-content" class="step" data-x="4900" data-y="550" data-rotate='270' data-z='-3000' data-scale='0.25'>
+          <div id="changable-content" class="step hide-until-active" data-x="4900" data-y="550" data-rotate='270' data-z='-3000' data-scale='0.25'>
             Content
           </div>
 
 
-      <div id="elasticsearch" class="step" data-x="4800" data-y="7500" data-rotate='270' data-z='-5000'> 
+      <div id="elasticsearch" class="step" data-x="4800" data-y="7500" data-rotate='270' data-z='-7500'> 
         ElasticSearch is Awesome!
       </div>
 
-        <div id="fulltext" class="step" data-x="4850" data-y="7500" data-rotate='210' data-z='-10000'>
+        <div id="fulltext" class="step hide-when-inactive" data-x="4850" data-y="7500" data-rotate='210' data-z='-12500' data-scale='0.8'>
           Fulltext Search
         </div>
 
-        <div id="on-any-field" class="step" data-x="4900" data-y="7500" data-rotate='150' data-z='-15000'>
+        <div id="on-any-field" class="step hide-when-inactive" data-x="4900" data-y="7500" data-rotate='150' data-z='-15000' data-scale='0.6'>
           On Any Field
         </div>
 
-        <div id="in-any-language" class="step" data-x="4950" data-y="7500" data-rotate='90' data-z='-20000'>
+        <div id="in-any-language" class="step hide-when-inactive" data-x="4950" data-y="7500" data-rotate='90' data-z='-17500' data-scale='0.4'>
           In Any Language
         </div>
 
-        <div id="fast" class="step" data-x="5000" data-y="7500" data-rotate='30' data-z='-25000'>
+        <div id="fast" class="step" data-x="5000" data-y="7500" data-rotate='30' data-z='-20000' data-scale='0.2'>
           Fast
         </div>
 
 
+      <!-- ################################################################################### -->
 
+
+      <!-- combine this with the next slide -->
+      <div id='graphs' class='step' data-x='5100' data-y='7500' data-z='-19725' data-rotate-x='270' data-scale='1'>
+        Graphs
+      </div>
+
+        <div id='graphs-1' class='step' data-x='5000' data-y='7500' data-z='-20000' data-rotate-x='270' data-scale='1'>
+          <img alt="n/a" src='images/petersen.png' />
+        </div>
+
+
+      <div id='graph-questions' class='step hide-when-inactive' data-x='7500' data-y='7500' data-z='-20000' data-rotate-x='270' data-scale='1'>
+        Easy to ask Hard Questions
+      </div>
+
+        <div id='graph-importance' class='step widebox hide-when-inactive' data-x='9000' data-y='7500' data-z='-20000' data-rotate-x='270' data-scale='1'>
+          How important is a given object in a social network? 
+        </div>
+
+          <div id='graph-importance-1' class='step hide-when-inactive' data-x='9000' data-y='7000' data-z='-20000' data-rotate-x='270' data-scale='0.5'>
+            <img alt="n/a" src='images/importance.png' />
+          </div>
+
+        <div id='graph-connections' class='step hide-when-inactive' data-x='9000' data-y='7000' data-z='-20000' data-rotate-x='270' data-scale='0.5'>
+          How are two disparate items related? 
+        </div>
+
+          <div id='graph-connections-1' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-20000' data-rotate-x='270' data-scale='0.25'>
+            <img alt="n/a" src='images/connectivity.png' />
+          </div>
+
+        <div id='graph-cliques' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-20000' data-rotate-x='270' data-scale='0.25'>
+          What social groups form?
+        </div>
+
+          <div id='graph-cliques-0' class='step hide-when-inactive' data-x='9000' data-y='6000' data-z='-20000' data-rotate-x='270' data-scale='0.125'>
+            <img alt="n/a" src='images/cliques-disorganized.png' />
+          </div>
+
+          <div id='graph-cliques-1' class='step hide-when-inactive' data-x='9000' data-y='5500' data-z='-20000' data-rotate-x='270' data-scale='0.125'>
+            <img alt="n/a" src='images/cliques.png' />
+          </div>
+
+          <div id='graph-cliques-2' class='step hide-when-inactive' data-x='9000' data-y='5000' data-z='-20000' data-rotate-x='270' data-scale='0.125'>
+            <img alt="n/a" src='images/cliques-marked.png' />
+          </div>
+
+          <div id='graph-cliques-3' class='step hide-until-active' data-x='9000' data-y='4500' data-z='-20000' data-rotate-x='270' data-scale='0.125'>
+            <img alt="n/a" src='images/clique-social.png' />
+          </div>
+
+          <div id='graph-cliques-4' class='step hide-when-inactive' data-x='9000' data-y='4500' data-z='-20000' data-rotate-x='270' data-scale='0.125'>
+            Social Graph
+          </div>
+
+
+      <div id='clique-questions' class='step widebox hide-when-inactive fast-transition' data-x='9000' data-y='4500' data-z='-20000' data-rotate-z='-90'>
+        What can we do with the social graphs?
+      </div>
+
+      <div id='clique-answers' class='step widebox hide-when-inactive slow-transition' data-x='9000' data-y='5300' data-z='-20000' data-rotate-z='90'>
+        The same things as with the object graphs! 
+      </div>
+
+        <div id='clique-importance' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-20000' data-rotate-z='90'>
+          How important is a given social group?
+        </div>
+
+          <div id='clique-importance-1' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-20500' data-rotate-z='90' data-scale='0.5'>
+            <img alt="n/a" src='images/Clique_Importance.png' />
+          </div>
+
+        <div id='clique-connectivity' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-20500' data-rotate-z='90' data-scale='0.5'>
+          How are two social groups connected?
+        </div>
+
+          <div id='clique-connectivity-1' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-21000' data-rotate-z='90' data-scale='0.25'>
+            <img alt="n/a" src='images/Clique_Connectivity.png' />
+          </div>
+        
+        <div id='clique-clique' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-21000' data-rotate-z='90' data-scale='0.25'>
+          Where are the social supergroups?
+        </div>
+
+          <div id='clique-clique-1' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-21500' data-rotate-z='90' data-scale='0.125'>
+            <img alt="n/a" src='images/clique_cliques.png' />
+          </div>
+        
+          <div id='clique-clique-2' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22000' data-rotate-z='90' data-scale='0.125'>
+            <img alt="n/a" src='images/clique-clique-marked.png' />
+          </div>
+        
+          <div id='clique-clique-3' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90' data-scale='0.125'>
+            <img alt="n/a" src='images/clique-clique-supergroups.png' />
+          </div>
+
+      <div id='and-it-goes-on' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90' data-scale='0.125'>
+        We can keep examining this structure
+      </div>
+
+      <div id='make-mine-automatic' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-23000' data-rotate-z='90' data-scale='0.125'>
+        We want to build this structure automatically
+      </div>
+        
+        <div id="inference-engine" class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-24000' data-rotate-z='90' data-scale='0.5'>
+          <ul> 
+            <li>Inferring Social Groups</li>
+            <li>Inferring nth-order relations</li>
+            <li>Cache Metrics (Importance, Transitivity, etc)</li>
+          </ul>
+        </div>
+
+      <div id='and-on' class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500'>
+        Questions we can answer:
+      </div>
+
+        <div id='question-importance' class='step hide-until-active  widebox' data-x='9000' data-y='6500' data-z='-20000'>
+          How Important is this object in the context of other objects?
+        </div>
+
+          <div id='answer-centrality-metrics' class='step hide-until-active' data-x='10000' data-y='6500' data-z='-20000' >
+            Centrality Metrics
+          </div>
+
+        <div id='question-interaction' class='step widebox hide-until-active' data-x='9000' data-y='6600' data-z='-20000' >
+          How likely is it that these two objects interacted?
+        </div>
+
+          <div id='answer-gbn' class='step hide-until-active' data-x='10000' data-y='6600' data-z='-20000' >
+            GBN
+          </div>
+
+          <div id='answer-gbn-definition' class='step hide-until-active' data-x='10100' data-y='6600' data-z='-20000' >
+            (Generalized Bacon Number)
+          </div>
+
+        <div id='questions-contestation' class='step hide-until-active' data-x='8810' data-y='6700' data-z='-20000' >
+          How Contested was this item? 
+        </div>
+
+          <div id='answer-short-paths' class='step hide-until-active' data-x='10000' data-y='6700' data-z='-20000' >
+            Distribution of Short Paths Metric
+          </div>
+
+        <div id='question-cohesion' class='step hide-until-active' data-x='8810' data-y='6800' data-z='-20000' >
+          How cohesive was this Group of People?
+        </div>
+
+          <div id='answer-clique-factor' class='step hide-until-active' data-x='10000' data-y='6800' data-z='-20000' >
+            Clique-factor Metric
+          </div>
+
+        <div id='question-social-groups' class='step hide-until-active' data-x='8810' data-y='6900' data-z='-20000' >
+          What Social Groups does this Object fit into?
+        </div>
+
+          <div id='questions-minimal-clique-finding' class='step hide-until-active' data-x='10000' data-y='6900' data-z='-20000' >
+            Minimal Clique Finding Algorithm
+          </div>
 
       <!-- ################################################################################### -->
 
-      <!--<div id="future-plans" class="step" data-x="400000" data-y="4000" data-scale="1">-->
+      <div id='traditional-role' class='step hide-when-inactive' data-x='0000' data-y='6500' data-z='-15000' data-rotate-z='180'>
+        Support research claims
+      </div>
 
-        <!--Improve the CMS-->
-          <!--- Lots of room to tweak and make things easier-->
+      <div id='guide-research' class='step hide-when-inactive' data-x='0000' data-y='6300' data-z='-15000' data-rotate-z='180'>
+        Help guide research
+      </div>
 
-        <!--Cloudfront Coming Soon(tm)-->
-          <!--- Will make it _even faster_-->
+      <div id='how-to-guide' class='step hide-when-inactive' data-x='0000' data-y='6100' data-z='-15000' data-rotate-z='180'>
+        Identifying items of interest
+      </div>
 
-        <!--[>#################### <]-->
+      <!-- ################################################################################### -->
 
-        <!--Better integration with Library system-->
-          <!--- make the curator's lives easier-->
-          <!--- make for rapid introduction of new content to the production site.-->
-          <!--- every item needs to move lots of large images to harvard library-->
-            <!--server  -->
-            <!--- Plan: Sneakernet + Automatic import of Library Receipt-->
-            <!--- Emphasizing the Simplest thing that could possibly work-->
-            <!--- For even a large increase in problem size, constant solution size-->
+      <div id='we-know-what-to-do' class='step hide-when-inactive' data-x='9000' data-y='-6000' data-z='-10000'>
+        We know how to build these tools. 
+      </div>
 
-        <!--[>#################### <]-->
+      <div id='not-too-good-to-be-true' class='step hide-when-inactive' data-x='9000' data-y='-6000' data-z='-10000'>
+        It's not to good to be true.
+      </div>
 
-        <!--- genealogy-->
-          <!--- what they thought they wanted-->
-        <!--- genealogy++ -->
-          <!--- add lots of relationships between more than just people-->
-        <!--- semantic graph-->
-          <!--- complicated, full of information-->
+      <!-- ################################################################################### -->
+
+      <div id="how-can-we-make-it-happen" class='step hide-when-inactive' data-x='9000' data-y='-6000' data-z='-15000'> 
+        How can we make this happen?
+      </div>
+
+      <div id="what-we-have-done" class='step hide-when-inactive' data-x='9000' data-y='-6500' data-z='-22500'> 
+        What we've done:
+      </div>
+
+        <div id="easier-to-enter-data" class='step hide-when-inactive' data-x='9000' data-y='-6500' data-z='-22500'> 
+          Make it easier to enter data
+        </div>
+
+        <div id="neo4j" class='step hide-when-inactive' data-x='9000' data-y='-6500' data-z='-22500'> 
+          Build the Neo4j Graph
+        </div>
+
+      <div id="what-we-want-to-build" class='step hide-when-inactive' data-x='9000' data-y='-6500' data-z='-22500'> 
+        We want to build:
+      </div>
+
+        <div id="ui-for-non-programmers" class='step widebox hide-when-inactive' data-x='9000' data-y='-6500' data-z='-22500'> 
+          UI for non-programmers to ask Graph Questions  
+        </div>
+
+        <div id="inference-engines" class='step hide-when-inactive' data-x='9000' data-y='-6500' data-z='-22500'> 
+          Inference Engines
+        </div>
+
+      <!-- ################################################################################### -->
+
+      <div id="tertiary-benefits" class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'> 
+        We did more than just build WWQI
+      </div>
+
+      <div id="already-released" class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+        Released two libraries!
+      </div>
+
+        <div id="graphable" class='step hide-until-active' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+          Graphable: 
+        </div>
+
+          <div id="graphable-description" class='step hide-until-active' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+            Extracts a semantic graph from a app
+          </div>
+
+        <div id="enviable" class='step hide-until-active' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+          Enviable:
+        </div>
+
+          <div id="enviable-description" class='step hide-until-active' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+            Provides a configuration management interface for 12-factor apps 
+          </div>
           
+      <!-- ################################################################################### -->
 
-        <!--- importance-->
-          <!--- Finding out which nodes are most influential (subject to-->
-            <!--constraints)-->
-          <!--- Examples: Big Cities, Important Political/Cultural Leaders, etc-->
-          <!--- Constraint might limit importance relative to particular-->
-            <!--people/places/things-->
-          <!--- Example Question: "Most important Person Before 1850 with respect-->
-            <!--to manuscripts, excluding connections through Tehran"-->
-            <!--- Why exclude Tehran? -->
-              <!--Because it's a _very_ popular node, likely to cause false-->
-              <!--importance-->
+      <div id="can-release" class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+        More Potential Libraries!
+      </div>
 
-        <!--- nontrivial relationships-->
-          <!--- builds on importance -->
-          <!--- find connections between people/places/items-->
-          <!--- determine likelihood that they know each other / interacted with-->
-            <!--each other-->
-          <!--- Example: "How many times were these two people in the same small-->
-            <!--town 50 miles south of Tehran"-->
-          <!--- Example: "What is the distribution of path-lengths between two-->
-            <!--people"-->
-            <!--- Need to exclude highly connected nodes, to prevent skewing the-->
-              <!--data-->
-          
-        <!--- cliques-->
-          <!--- a clique is a group of objects with high internal connections, but-->
-          <!--low external connections-->
-          <!--- example: Distant Different social networks -- Eg, My social network, I move to-->
-          <!--Chicago, Start a new social net -- My old social network = one clique, my new-->
-          <!--social network = another clique, I'm the connection.-->
-          <!--- example: Montagues and Capulets-->
-          <!--- example question: What were the discrete social worlds of Qajar-->
-            <!--Iran?-->
-            <!--- answer: No idea, Clique analysis is really hard.-->
+        <div id="searchable" class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+          Searchable: Extract Search Indexes from an app
+        </div>
 
-        <!--- what else?-->
-          <!--- cliques form a graph-->
-          <!--- all the previous questions can be asked about cliques-->
-            <!--- what are important discrete social worlds in Qajar Iran?-->
-            <!--- How are two different social groups related?-->
-            <!--- What are the super groups of smaller social groups?-->
-          <!--- Proceed ad infinitum-->
+        <div id="static-pages" class='step hide-when-inactive' data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>  
+          Static Page Generator
+        </div>
 
-        <!--- How can we make this happen-->
-          <!--- More data = Better answers-->
-            <!--- Make it easier to enter data-->
-          <!--- Graph Database with good UI -- designed for non-programmers-->
-          <!--- Inference Engines-->
-            <!--- Ask all the questions, remember the answers.-->
-        
-        <!--- Progress toward this goal:-->
-          <!--- CMS -->
-            <!--- easier to enter data-->
-          <!--- Neo4j-->
-            <!--- Graph Database extracted from the curated data-->
+          <div id="static-pages-why" class="step hide-when-inactive" data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>   
+            Powerful for other projects to generate multilingual static sites
+          </div>
 
-        <!--- Future Goals-->
-          <!--- Good UI to the Neo4j Database-->
-          <!--- Inference Engines-->
-            <!--- Infer nth-order edges (eg: This is someones second cousin)-->
-            <!--- Cache Importance Metrics (eg: How important is this node?)-->
-            <!--- Cache Relationship Metrics (eg: This nth order relationship-->
-            <!--indicates a high probability that these two objects are related)-->
-            <!--- Cache Clique analysis-->
-            <!--- Caching is for speed-->
+          <div id="static-pages-why-not" class="step hide-when-inactive" data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>   
+            Requires some effort
+          </div>
 
-      <!--</div>-->
+      <div id="even-more"  class="step hide-when-inactive" data-x='9000' data-y='6500' data-z='-22500' data-rotate-z='90'>   
+        But that's not all, we uncovered bugs, built fixes, wrote blog posts,
+        and generally gave back as much as we could to the community of OSS
+        developers we depend on.
+      </div>
 
-      <!--<div id="tertiary-benefits" class="step" data-x="4000" data-y="6000" data-scale="1" >-->
-        <!--Things we've been able to give back to the FLOSS community:-->
-
-        <!--- graphable-->
-          <!--- A gem that drives extracting the semantic graph information from the-->
-            <!--system modelling-->
-          <!--- Works transparently on many systems using the same underlying-->
-            <!--database mapping API-->
-        
-        <!--- searchable-->
-          <!--- Potential gem extracted from the code that builds the search index-->
-          <!--- Provide a thin layer on top of the excellent Tire gem to make-->
-            <!--rapidly building multi-lingual Search indexes easy-->
-          <!--- Provide a thin layer to aid in building searches across multiple-->
-            <!--languages-->
-
-        <!--- enviable-->
-          <!--- Tool for managing multiple configuration sources-->
-
-        <!--- static page generator-->
-          <!--- This too could be extracted an made generic. -->
-          <!--- Would provide a powerful way for other, similar projects to-->
-            <!--systematically convert their site into a pre-cached set of html-->
-            <!--pages for S3 and Cloudfront-->
-          <!--- Needs the most effort to make work.-->
-
-        <!--This doesn't even begin to cover the numerous bugs uncovered, solutions-->
-        <!--found (and given back to the community), and the wealth of potential-->
-        <!--tools that will be born out of the Neo4j integration. -->
-
-        <!--It's not only helping history and WWQI, but also the FLOSS community by-->
-        <!--virtue of our use and contribution to FLOSS tools.-->
-      <!--</div>-->
+      <div id="fin" class="step" data-x="50000" data-y="50000" data-z="50000">
+        <ul>
+          <li><a href="http://github.com/jfredett/wwqi-tech-slides">github.com/jfredett/wwqi-tech-slides</a></li>
+          <li><a href="http://www.qajarwomen.org">www.qajarwomen.org</a></li>
+          <li><a href="http://www.vermonster.com">www.vermonster.com</a></li>
+        </ul>
+      </div>
     </div>
   </body>
 

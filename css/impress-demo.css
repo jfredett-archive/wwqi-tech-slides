@@ -117,8 +117,17 @@ body     { pointer-events: none; }
 
   font-family: 'PT Serif', georgia, serif;
 
-  font-size: 48px;
+  font-size: 40px;
   line-height: 1.5;
+}
+
+
+.smallprint {
+  font-size: 32px;
+}
+
+.widebox {
+  width: 1280px;
 }
 
 .step {
@@ -132,6 +141,14 @@ body     { pointer-events: none; }
 /* fade out inactive slides */
 .step:not(.active) {
   opacity: 0.3;
+}
+
+.hide-when-inactive:not(.active) {
+  opacity: 0;
+}
+
+.hide-until-active:not(.active):not(.past) {
+  opacity: 0;
 }
 
 .unstep {
@@ -157,6 +174,23 @@ body     { pointer-events: none; }
   -o-transition:      opacity 1s;
   transition:         opacity 1s;
 }
+
+.fast-transition {
+  -webkit-transition: opacity 200ms;
+  -moz-transition:    opacity 200ms;
+  -ms-transition:     opacity 200ms;
+  -o-transition:      opacity 200ms;
+  transition:         opacity 200ms;
+}
+
+.slow-transition {
+  -webkit-transition: opacity 2000ms;
+  -moz-transition:    opacity 2000ms;
+  -ms-transition:     opacity 2000ms;
+  -o-transition:      opacity 2000ms;
+  transition:         opacity 2000ms;
+}
+
 
 /* fade out inactive slides */
 .unstep:not(.active) {
